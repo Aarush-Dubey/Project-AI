@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}E-Week 2025{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <style>
+
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    
+    .wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .content {
+      flex: 1;
+    }
+    
+    .site-footer {
+      background-color: #333; 
+      color: #fff;            
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+      <div class="container">
+        <h1>E-Week 2025</h1>
+        <nav>
+          <a href="{% url 'home' %}">Home</a>
+          <a href="{% url 'signup' %}">Get Your Ticket</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="content container my-4">
+      {% block content %}
+      {% endblock %}
+    </div>
+    
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2025 BITS Pilani. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

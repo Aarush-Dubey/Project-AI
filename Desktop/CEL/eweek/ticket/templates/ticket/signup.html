@@ -1,0 +1,21 @@
+{% extends 'ticket/base.html' %}
+
+{% block title %}Sign Up - E-Week 2025{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+  <h2 class="mb-4">Sign Up for Your Ticket</h2>
+  <form method="POST" action="{% url 'signup' %}">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" required>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Get Ticket</button>
+  </form>
+</div>
+{% endblock %}
